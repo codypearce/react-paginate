@@ -61,7 +61,7 @@ var PaginationBoxView = function (_Component) {
     _this.handlePageSelected = function (selected, evt) {
       evt.preventDefault ? evt.preventDefault() : evt.returnValue = false;
 
-      if (_this.state.selected === selected) return;
+      if (_this.state.selected === selected + 1) return;
 
       _this.setState({ selected: selected });
 
@@ -194,7 +194,7 @@ var PaginationBoxView = function (_Component) {
       return _react2.default.createElement(_PageView2.default, {
         key: index,
         onClick: this.handlePageSelected.bind(null, index),
-        selected: selected === index,
+        selected: selected === index + 1,
         pageClassName: pageClassName,
         pageLinkClassName: pageLinkClassName,
         activeClassName: activeClassName,

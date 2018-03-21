@@ -90,7 +90,7 @@ export default class PaginationBoxView extends Component {
   handlePageSelected = (selected, evt) => {
     evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
 
-    if (this.state.selected === selected) return;
+    if (this.state.selected === selected + 1) return;
 
     this.setState({selected: selected});
 
@@ -128,7 +128,7 @@ export default class PaginationBoxView extends Component {
     return <PageView
       key={index}
       onClick={this.handlePageSelected.bind(null, index)}
-      selected={selected === index}
+      selected={selected === index + 1}
       pageClassName={pageClassName}
       pageLinkClassName={pageLinkClassName}
       activeClassName={activeClassName}
