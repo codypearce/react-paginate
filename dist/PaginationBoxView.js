@@ -125,7 +125,7 @@ var PaginationBoxView = function (_Component) {
             continue;
           }
 
-          if (_index >= selected - leftSide && _index <= selected + rightSide) {
+          if (page >= selected - leftSide && page <= selected + rightSide) {
             items.push(createPageView(_index));
             continue;
           }
