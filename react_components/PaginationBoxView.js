@@ -127,7 +127,7 @@ export default class PaginationBoxView extends Component {
 
     return <PageView
       key={index}
-      onClick={this.handlePageSelected.bind(null, index)}
+      onClick={this.handlePageSelected.bind(null, index + 1)}
       selected={selected === index + 1}
       pageClassName={pageClassName}
       pageLinkClassName={pageLinkClassName}
@@ -188,7 +188,7 @@ export default class PaginationBoxView extends Component {
           continue;
         }
 
-        if ((index >= selected - leftSide) && (index <= selected + rightSide)) {
+        if ((page >= selected - leftSide) && (page <= selected + rightSide)) {
           items.push(createPageView(index));
           continue;
         }
